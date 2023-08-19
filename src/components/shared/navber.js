@@ -1,8 +1,11 @@
+import { useGetFeaturesQuery } from "@/redux/api/api";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 
 const NavBar = () => {
   const { data: session } = useSession();
+  const { data, isLoading, isError, error } = useGetFeaturesQuery(undefined);
+  console.log("data : ", data?.data);
   console.log(session);
   return (
     <div className="navbar fixed   bg-gradient-to-b from-orange-400 to-blue-400 text-black py-2 px-4 rounded-md">
@@ -61,18 +64,24 @@ const NavBar = () => {
           <li tabIndex={0}>
             <div className="dropdown dropdown-hover">
               <a tabIndex={0} className="">
-                Hover
+                Features
               </a>
               <ul
                 tabIndex={0}
-                className="dropdown-content z-[1] menu p-2 text-2xl font-bold shadow bg-base-100 rounded-box w-52 mt-32"
+                className="dropdown-content z-[1] menu p-2 text-2xl font-bold shadow bg-base-100 rounded-box w-72  lg:mt-80"
               >
-                <li>
-                  <a>Item 1</a>
-                </li>
-                <li>
-                  <a>Item 2</a>
-                </li>
+                {data?.data.map((feature) => (
+                  <li key={feature?._id}>
+                    <a>
+                      {" "}
+                      <img
+                        src={feature?.image}
+                        className="w-4 h-4 mr-2 stroke-current"
+                      />{" "}
+                      {feature?.categoryName}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </li>

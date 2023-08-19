@@ -6,7 +6,7 @@ import SponsarPage from "@/components/shared/sponsar";
 export default function HomePage() {
   return (
     <div>
-      <div className="hero   min-h-screen bg-base-200">
+      <div className="mt-32   min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse m-0 p-0">
           <img
             src="https://techbd.com.bd/wp-content/uploads/2021/06/Web-Banner-desktop-2-1300x545-1-800x335.jpg"
