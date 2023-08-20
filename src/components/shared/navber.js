@@ -5,8 +5,6 @@ import Link from "next/link";
 const NavBar = () => {
   const { data: session } = useSession();
   const { data, isLoading, isError, error } = useGetFeaturesQuery(undefined);
-  console.log("data : ", data?.data);
-  console.log(session);
   return (
     <div className="navbar fixed   bg-gradient-to-b from-orange-400 to-blue-400 text-black py-2 px-4 rounded-md">
       <div className="navbar-start">
@@ -32,34 +30,52 @@ const NavBar = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 text-2xl font-bold shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a>Item 1</a>
+              <a>About</a>
             </li>
             <li>
-              <a>Parent</a>
+              <a>Features</a>
               <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
+                {data?.data.map((feature) => (
+                  <li key={feature?._id}>
+                    <a>
+                      <Link
+                        href={`/categoryProduct/${feature?._id}`}
+                        className="flex"
+                      >
+                        <img
+                          src={feature?.image}
+                          className="w-6 h-4 mr-2 stroke-current"
+                        />{" "}
+                        {feature?.categoryName}
+                      </Link>
+                    </a>
+                  </li>
+                ))}
               </ul>
             </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+            {session?.user ? (
+              <li>
+                <a onClick={() => signOut()}>Logout</a>
+              </li>
+            ) : (
+              <li>
+                <Link href={"/login"}>Login</Link>
+              </li>
+            )}
           </ul>
         </div>
-        {/* <a className="btn btn-ghost normal-case text-xl">daisyUI</a> */}
-        <img
-          src="https://techbd.com.bd/wp-content/uploads/2021/04/logo-1.png"
-          alt="df"
-        />
+        <Link href={"/"}>
+          {" "}
+          <img
+            src="https://techbd.com.bd/wp-content/uploads/2021/04/logo-1.png"
+            alt="df"
+          />
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-2xl font-bold">
           <li>
-            <a>Item 1</a>
+            <a>About</a>
           </li>
           <li tabIndex={0}>
             <div className="dropdown dropdown-hover">
@@ -73,12 +89,16 @@ const NavBar = () => {
                 {data?.data.map((feature) => (
                   <li key={feature?._id}>
                     <a>
-                      {" "}
-                      <img
-                        src={feature?.image}
-                        className="w-4 h-4 mr-2 stroke-current"
-                      />{" "}
-                      {feature?.categoryName}
+                      <Link
+                        href={`/categoryProduct/${feature?._id}`}
+                        className="flex"
+                      >
+                        <img
+                          src={feature?.image}
+                          className="w-6 h-4 mr-2 stroke-current"
+                        />{" "}
+                        {feature?.categoryName}
+                      </Link>
                     </a>
                   </li>
                 ))}
@@ -98,8 +118,16 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end ml-4">
-        <h2 className="text-2xl font-bold text-white">{session?.user?.name}</h2>
-        <a className="btn">Button</a>
+        <div className="w-10 rounded-full mr-4">
+          <img src={session?.user?.image} />
+        </div>
+        <h2 className="text-2xl font-bold text-white mr-4 hidden sm:block">
+          {session?.user?.name}
+        </h2>
+        <Link href={"/pcBuilder"} className="btn">
+          {" "}
+          Pc Builder
+        </Link>
       </div>
     </div>
   );

@@ -1,33 +1,71 @@
+import { useGetFeaturesProductQuery } from "@/redux/api/api";
+import Link from "next/link";
+
 const ProductsPage = () => {
-  let arrayOfObjects = [
-    { name: "Alice", age: 25 },
-    { name: "Bob", age: 30 },
-    { name: "Charlie", age: 22 },
-    { name: "David", age: 28 },
-    { name: "Eve", age: 23 },
-    { name: "Frank", age: 35 },
-  ];
+  const { data, isLoading, isError, error } =
+    useGetFeaturesProductQuery(undefined);
+
+  // Check if data is iterable (an array)
+  let randomObjects = [];
+  if (Array.isArray(data?.data)) {
+    randomObjects = [...data.data].sort(() => Math.random() - 0.5).slice(0, 6);
+
+    // Now you can use the randomObjects array as needed
+  } else {
+    console.error("Data is not in the expected format");
+  }
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 bg-base-200 gap-3">
-      {arrayOfObjects?.map((arrays) => (
+      {randomObjects.map((featuresProduct) => (
         <div
-          key={arrays.age}
+          key={featuresProduct._id}
           className="  bg-base-200 hover:border-4 border-black  p-2"
         >
           <figure className="pt-2 flex justify-center items-center">
             <img
-              src="https://techbd.com.bd/wp-content/uploads/2021/04/hp-250-g8-core-i3-10th-gen-laptop-1-500x500-1-300x300.jpg"
+              src={featuresProduct?.image}
               alt="Shoes"
               className="rounded-lg"
             />
           </figure>
           <div className="card-body items-center text-center">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <h2 className="card-title">{featuresProduct?.productName}</h2>
+            <p>{featuresProduct?.description}</p>
+
+            <div class="flex justify-between item-center gap-2">
+              <p class="text-gray-500 font-medium ">
+                {featuresProduct?.category}
+              </p>
+              <div class="flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-yellow-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <p class="text-gray-600 font-bold text-sm ml-1">
+                  {featuresProduct?.individual_rating}
+                  <span class="text-gray-500 font-normal">(76 reviews)</span>
+                </p>
+              </div>
+
+              <div class="bg-gray-200 px-3 py-1 rounded-full text-xs font-medium text-gray-800 ">
+                {featuresProduct?.price}$
+              </div>
+              <div class="bg-gray-200 px-3 py-1 rounded-full text-xs font-medium text-gray-800 ">
+                {featuresProduct?.status ? "In-Stock" : "Out-Stock"}
+              </div>
+            </div>
+
             <div className="card-actions">
-              <button className="btn bg-gradient-to-b from-orange-400 to-blue-400 text-white font-bold">
-                Buy Now
-              </button>
+              <Link href={`/featureProduct/${featuresProduct?._id}`}>
+                <button className="btn bg-gradient-to-b from-orange-400 to-blue-400 text-white font-bold">
+                  Buy Now
+                </button>
+              </Link>
             </div>
           </div>
         </div>
