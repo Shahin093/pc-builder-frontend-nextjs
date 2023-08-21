@@ -4,14 +4,18 @@ import { signIn } from "next-auth/react";
 const LoginPage = () => {
   const handleGitHubSignIn = async () => {
     try {
-      await signIn("github", { callbackUrl: "http://localhost:3000/" });
+      await signIn("github", {
+        callbackUrl: "https://pc-builder-frontend-shahin093.vercel.app/",
+      });
     } catch (error) {
       console.error("Error signing in with GitHub:", error);
     }
   };
   const handleGoogleSignIn = async () => {
     try {
-      await signIn("google", { callbackUrl: "http://localhost:3000/" });
+      await signIn("google", {
+        callbackUrl: "https://pc-builder-frontend-shahin093.vercel.app/",
+      });
     } catch (error) {
       console.error("Error signing in with GitHub:", error);
     }

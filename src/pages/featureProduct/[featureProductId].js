@@ -61,7 +61,7 @@ ProductDetailPage.getLayout = function getLayout(page) {
 export const getServerSideProps = async (context) => {
   const { params } = context;
   const res = await fetch(
-    `http://localhost:5000/api/v1/featureProduct/product/${params.featureProductId}`
+    `https://pc-builder-backend-shahin093.vercel.app/api/v1/featureProduct/product/${params.featureProductId}`
   );
   const data = await res.json();
   return {

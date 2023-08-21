@@ -75,3 +75,21 @@ const ProductsPage = () => {
 };
 
 export default ProductsPage;
+
+// export const getServerSideProps = async () => {
+//   const res = await fetch(
+//     "https://pc-builder-backend-shahin093.vercel.app/api/v1/featureProduct"
+//   );
+
+//   if (!res.ok) {
+//     throw new Error("Failed to fetch data from the API");
+//   }
+
+//   const data = await res.json();
+
+//   return {
+//     props: {
+//       products: data?.data || [], // Set a default value in case data is undefined
+//     },
+//   };
+// };

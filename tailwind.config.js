@@ -10,6 +10,7 @@ module.exports = {
       transitionDuration: {
         2000: "2000ms",
       },
+      // borderStyle: ["hover"],
     },
   },
   plugins: [require("daisyui")],

@@ -2,7 +2,7 @@ import RootLayout from "@/components/Layouts/RootLayout";
 import Link from "next/link";
 
 const ProductDetailPage = ({ categoryProduct }) => (
-  <div className="mt-32 grid grid-cols-1 lg:grid-cols-3 gap-3">
+  <div className="mt-28   bg-base-200 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-3">
     {categoryProduct?.map((product) => (
       <div
         key={product._id}
@@ -49,7 +49,7 @@ const ProductDetailPage = ({ categoryProduct }) => (
 
           <Link
             href={`/featureProduct/${product?._id}`}
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-5"
           >
             Read more
             <svg
@@ -77,24 +77,12 @@ ProductDetailPage.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 
-// export const getStaticPaths = async () => {
-//   const res = await fetch("http://localhost:5000/news");
-//   const newses = await res.json();
-
-//   const paths = newses.map((news) => ({
-//     params: { newsId: news.id },
-//   }));
-
-//   return { paths, fallback: false };
-// };
-
 export const getServerSideProps = async (context) => {
   const { params } = context;
   const res = await fetch(
-    `http://localhost:5000/api/v1/featureProduct/category-product/${params.categoryProductId}`
+    `https://pc-builder-backend-shahin093.vercel.app/api/v1/featureProduct/category-product/${params.categoryProductId}`
   );
   const data = await res.json();
-  console.log("Data:", data);
   return {
     props: {
       categoryProduct: data?.data,

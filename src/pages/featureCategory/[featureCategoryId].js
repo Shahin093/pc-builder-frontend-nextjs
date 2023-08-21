@@ -11,7 +11,6 @@ const FeatureCategoryProduct = ({ categoryProduct }) => {
 
     router.push("/pcBuilder");
   };
-  console.log("updateData : ", updatedData);
   return (
     <div className="mt-32">
       {categoryProduct &&
@@ -74,7 +73,7 @@ const FeatureCategoryProduct = ({ categoryProduct }) => {
                   <p class="text-xl font-black text-gray-800">
                     $110
                     <span class="font-normal text-gray-600 text-base">
-                      /night
+                      /Special
                     </span>
                   </p>
 
@@ -98,7 +97,7 @@ export default FeatureCategoryProduct;
 export const getServerSideProps = async (context) => {
   const { params } = context;
   const res = await fetch(
-    `http://localhost:5000/api/v1/featureProduct/category-product/${params.featureCategoryId}`
+    `https://pc-builder-backend-shahin093.vercel.app/api/v1/featureProduct/category-product/${params.featureCategoryId}`
   );
   const data = await res.json();
   return {

@@ -5,8 +5,8 @@ import SponsarPage from "@/components/shared/sponsar";
 
 export default function HomePage() {
   return (
-    <div>
-      <div className="mt-32    bg-base-200">
+    <div className="  bg-base-200">
+      <div className="mt-24  bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse ">
           <img
             src="https://techbd.com.bd/wp-content/uploads/2021/06/Web-Banner-desktop-2-1300x545-1-800x335.jpg"
@@ -27,8 +27,19 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-
+      <h2 className=" flex justify-center items-center m-5">
+        <span className="text-4xl font-bold transition duration-150 border-b-8 border-transparent hover:border-purple-500">
+          {" "}
+          Featured Product
+        </span>
+      </h2>
       <ProductsPage></ProductsPage>
+      <h2 className=" flex justify-center items-center m-5">
+        <span className="text-4xl font-bold transition duration-150 border-b-8 border-transparent hover:border-purple-500">
+          {" "}
+          Featured Categories
+        </span>
+      </h2>
       <Catagories></Catagories>
       <SponsarPage></SponsarPage>
     </div>
