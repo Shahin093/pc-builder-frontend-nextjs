@@ -15,9 +15,9 @@ export const authOptions = {
       clientSecret: process.env.GOOGLE_SECRET,
     }),
   ],
-
+  // https://pc-builder-frontend-shahin093.vercel.app/login
   pages: {
-    signIn: "/login",
+    signIn: "https://pc-builder-frontend-shahin093.vercel.app/login",
   },
 };
 export default NextAuth(authOptions);
