@@ -3,9 +3,7 @@ import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 
 export const authOptions = {
-  // Configure one or more authentication providers
   providers: [
-    // Configure one or more authentication providers
     GithubProvider({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
@@ -15,7 +13,6 @@ export const authOptions = {
       clientSecret: process.env.GOOGLE_SECRET,
     }),
   ],
-  // https://pc-builder-frontend-shahin093.vercel.app/login
   pages: {
     signIn: "https://pc-builder-frontend-shahin093.vercel.app/login",
   },

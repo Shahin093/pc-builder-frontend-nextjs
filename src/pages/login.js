@@ -21,7 +21,6 @@ const LoginPage = () => {
     }
   };
 
-  // https://pc-builder-frontend-shahin093.vercel.app/auth/callback/google
   return (
     <div className="mt-20">
       <section class=" flex flex-row lg:h-screen lg:items-center ">

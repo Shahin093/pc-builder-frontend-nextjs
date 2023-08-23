@@ -13,7 +13,7 @@ pnpm dev
 ```
 
 backend site : https://pc-builder-backend-shahin093.vercel.app/api/v1/featureProduct
-frontend site :
+frontend site : https://pc-builder-frontend.vercel.app
 
 use technologies : JavaScript, nextJS, next/auth, tailwindcss, daisyui, and html $ css.
 
