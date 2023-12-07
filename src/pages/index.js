@@ -1,4 +1,5 @@
 import RootLayout from "@/components/Layouts/RootLayout";
+import OneToOneMeet from "@/components/UI/OneToOneMeet";
 import Catagories from "@/components/UI/catagories";
 import Header from "@/components/UI/header";
 import MeetingRoom from "@/components/UI/meetingRoom";
@@ -28,6 +29,7 @@ export default function HomePage() {
       <ReaiventPage />
       <SponsarPage></SponsarPage>
       <MeetingRoom />
+      <OneToOneMeet />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div class="bg-white mt-20">
+    <div style={{ background: "#FFF2E1" }} class="  mt-20">
       <div class="max-w-screen-xl px-8 mx-auto flex flex-col lg:flex-row items-start">
         <div class="flex flex-col w-full lg:w-6/12 justify-center lg:pt-24 items-start text-center lg:text-left mb-5 md:mb-0">
           <h1
