@@ -1,58 +1,150 @@
 const FooterPage = () => {
   return (
-    <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
-      <div>
-        <img
-          src="https://techbd.com.bd/wp-content/uploads/2021/04/SSL-Commerz-Pay-With-logo-All-Size-03-1.png"
-          alt="picture"
-        />
-      </div>
-      <div className="grid grid-flow-col gap-4">
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Jobs</a>
-        <a className="link link-hover">Press kit</a>
-      </div>
-      <div>
-        <div className="grid grid-flow-col gap-4">
-          <a>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              className="fill-current"
+    <footer class="bg-white">
+      <div class="container mx-auto px-8">
+        <div class="w-full flex flex-col md:flex-row py-6">
+          <div class="flex-1 mb-6 text-black">
+            <a
+              class="text-pink-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
+              href="#"
             >
-              <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-            </svg>
-          </a>
-          <a>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              className="fill-current"
-            >
-              <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-            </svg>
-          </a>
-          <a>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              className="fill-current"
-            >
-              <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-            </svg>
-          </a>
+              <svg
+                class="h-8 fill-current inline"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512.005 512.005"
+              >
+                <rect
+                  fill="#2a2a31"
+                  x="16.539"
+                  y="425.626"
+                  width="479.767"
+                  height="50.502"
+                  transform="matrix(1,0,0,1,0,0)"
+                />
+                <path
+                  class="plane-take-off"
+                  d=" M 510.7 189.151 C 505.271 168.95 484.565 156.956 464.365 162.385 L 330.156 198.367 L 155.924 35.878 L 107.19 49.008 L 211.729 230.183 L 86.232 263.767 L 36.614 224.754 L 0 234.603 L 45.957 314.27 L 65.274 347.727 L 105.802 336.869 L 240.011 300.886 L 349.726 271.469 L 483.935 235.486 C 504.134 230.057 516.129 209.352 510.7 189.151 Z "
+                />
+              </svg>
+              TECH BD
+            </a>
+          </div>
+          <div class="flex-1">
+            <p class="uppercase text-gray-500 md:mb-6">Links</p>
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a
+                  href="#"
+                  class="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                >
+                  FAQ
+                </a>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a
+                  href="#"
+                  class="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                >
+                  Help
+                </a>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a
+                  href="#"
+                  class="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                >
+                  Support
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="flex-1">
+            <p class="uppercase text-gray-500 md:mb-6">Legal</p>
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a
+                  href="#"
+                  class="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                >
+                  Terms
+                </a>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a
+                  href="#"
+                  class="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                >
+                  Privacy
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="flex-1">
+            <p class="uppercase text-gray-500 md:mb-6">Social</p>
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a
+                  href="#"
+                  class="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                >
+                  Facebook
+                </a>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a
+                  href="#"
+                  class="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                >
+                  Linkedin
+                </a>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a
+                  href="#"
+                  class="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                >
+                  Twitter
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="flex-1">
+            <p class="uppercase text-gray-500 md:mb-6">Company</p>
+            <ul class="list-reset mb-6">
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a
+                  href="#"
+                  class="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                >
+                  Official Blog
+                </a>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a
+                  href="#"
+                  class="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                >
+                  About Us
+                </a>
+              </li>
+              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                <a
+                  href="#"
+                  class="no-underline hover:underline text-gray-800 hover:text-pink-500"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div>
-        <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
-      </div>
+      <a
+        href="https://www.freepik.com/free-photos-vectors/background"
+        class="text-gray-500"
+      >
+        Background vector created by freepik - www.freepik.com
+      </a>
     </footer>
   );
 };
