@@ -6,7 +6,7 @@ const NavBar = () => {
   const { data: session } = useSession();
   const { data, isLoading, isError, error } = useGetFeaturesQuery(undefined);
   return (
-    <div className="navbar fixed   bg-gradient-to-b from-orange-400 to-blue-400 text-black py-2 px-4 rounded-md">
+    <div className="navbar    bg-gradient-to-b from-orange-400 to-blue-400 text-black py-2 px-4 rounded-md">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

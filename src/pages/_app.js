@@ -21,8 +21,9 @@ export default function App({ Component, pageProps }) {
       {
         <SessionProvider session={pageProps.session}>
           <NavBar></NavBar>
-          getLayout(
-          <Component {...pageProps} />)<FooterPage></FooterPage>
+          {/* getLayout( */}
+          <Component {...pageProps} />
+          <FooterPage></FooterPage>
         </SessionProvider>
       }
     </Provider>

@@ -4,12 +4,8 @@ import Link from "next/link";
 const ProductDetailPage = ({ categoryProduct }) => (
   <div className="mt-28   bg-base-200 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-3">
     {categoryProduct?.map((product) => (
-      <div
-        key={product._id}
-        className="bg-white shadow-md border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700"
-      >
+      <div key={product._id} className="bg-white shadow-md  ">
         <a href="#" className="flex justify-center items-center">
-          {/* <img  src="" alt=""  > */}
           <img className="rounded-t-lg" src={product?.image} alt="" />
         </a>
         <div className="p-2">
